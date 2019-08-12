@@ -13,16 +13,14 @@ import { Planet } from '../../models/planet.model';
 export class SearchComponent implements OnInit {
   protected unsubscribeSearch: Subject<void> = new Subject<void>();
   public planets: Planet[];
+  public planetSearch: any;
   constructor(private restService: RestService, private router: Router) { }
 
   ngOnInit() {
-    this.restService.getData('planets/').pipe(takeUntil(this.unsubscribeSearch)).subscribe((data: any) => {
-      console.log(data);
-    }, (err) => {
-    });
   }
 
   searchPlanets(event) {
+    console.log(event)
     this.unsubscribeSearch.next();
     this.restService.getData('planets/').pipe(takeUntil(this.unsubscribeSearch)).subscribe((data: any) => {
       this.planets = data.results;
