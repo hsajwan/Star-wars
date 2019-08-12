@@ -1,0 +1,18 @@
+.bg-div{
+    background-image: url('../../../assets/images/star-bg.jpg');
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.form-container {
+    height: fit-content;
+    min-width: 320px;
+    opacity: 0.9;
+    &> form{
+        z-index: 1;
+    }
+}
+
+.btn-primary {
+    cursor: pointer;
+}

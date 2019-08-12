@@ -1,0 +1,22 @@
+<div class='main-container d-flex justify-content-center align-items-center bg-div'>
+  <div class='py-2 px-5 form-container card'>
+    <span class='text-danger' *ngIf='loginMessage'>{{loginMessage}}</span>
+    <form [formGroup]='loginForm' (ngSubmit)="login(loginForm.value)">
+      <div class='p-2'>
+        <label for="username">
+          Username
+        </label>
+        <input class="form-control" required id="username" type="text" formControlName="username" />
+      </div>
+      <div class='p-2'>
+        <label for="password">
+          Password
+        </label>
+        <input class="form-control" required id="password" type="password" formControlName="password" />
+      </div>
+      <div class='p-2'>
+        <button class="button btn" type="submit" [class.btn-primary]='loginForm.valid' [class.btn-secondary]='loginForm.invalid' [disabled]='loginForm.invalid'>Login</button>
+      </div>
+    </form>
+  </div>
+</div>
