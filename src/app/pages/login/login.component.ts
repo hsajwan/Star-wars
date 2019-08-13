@@ -3,7 +3,8 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { RestService } from '../../services/rest.service';
 import { Router } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
-
+import * as CryptoJS from 'crypto-js';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

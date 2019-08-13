@@ -12,11 +12,13 @@ export class SrollableContainerComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges() {
-    this.dataToDisplay();
+    if(this.data){
+      this.dataToDisplay();
+    }
   }
 
   dataToDisplay() {
-    if (this.data) {
+    if (this.data.length > 0) {
       let sortedData = this.requiredData().reverse();
       let max = +sortedData[0].population;
       let barLength = 300;
@@ -26,6 +28,8 @@ export class SrollableContainerComponent implements OnChanges {
       });
       this.sortedData = sortedData;
       console.log(this.sortedData);
+    } else {
+      this.sortedData =[];
     }
   }
 

@@ -12,6 +12,7 @@ import { SrollableContainerComponent } from './components/srollable-container/sr
 import { CheckNumberPipe } from './pipes/check-number.pipe';
 import { AuthGuard } from './guard/auth.guard';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     SearchComponent,
     SrollableContainerComponent,
     CheckNumberPipe,
-    NotFoundComponent
+    NotFoundComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
