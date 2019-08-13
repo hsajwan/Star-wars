@@ -17,8 +17,8 @@ export class SrollableContainerComponent implements OnChanges {
 
   dataToDisplay() {
     if (this.data) {
-      let sortedData = this.requiredData();
-      let max = +sortedData[sortedData.length - 1].population;
+      let sortedData = this.requiredData().reverse();
+      let max = +sortedData[0].population;
       let barLength = 300;
       let fraction = barLength / max;
       sortedData.forEach((element) => {
