@@ -10,7 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { SrollableContainerComponent } from './components/srollable-container/srollable-container.component';
 import { CheckNumberPipe } from './pipes/check-number.pipe';
-import { Authguard } from './guard/auth.guard';
+import { AuthGuard } from './guard/auth.guard';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Authguard } from './guard/auth.guard';
     LoginComponent,
     SearchComponent,
     SrollableContainerComponent,
-    CheckNumberPipe
+    CheckNumberPipe,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,7 @@ import { Authguard } from './guard/auth.guard';
     ReactiveFormsModule,
     Ng4LoadingSpinnerModule.forRoot()
   ],
-  providers: [Authguard],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

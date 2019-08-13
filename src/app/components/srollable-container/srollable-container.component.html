@@ -1,13 +1,13 @@
-<!-- <div *ngIf='sortedData' class='d-flex flex-wrap justify-content-between p-2 scroll-container'>
-  <div *ngFor='let planet of sortedData' class='card p-1 m-2 w-25 flex-fill'>
+<div *ngIf='sortedData.length > 0' class='d-flex flex-wrap justify-content-between p-2 scroll-container'>
+  <div *ngFor='let planet of sortedData' class='card sorted-card p-2 m-2 w-25 flex-fill'>
     <h5 class="card-title">Planet: <b>{{planet.name}}</b></h5>
+    <div class='bar my-1'>
+      <div class='progress' [style.width.px]='planet.progress'></div>
+    </div>
     <span class='card-text'>Population: <b>{{planet.population}}</b></span>
-  </div>
-</div> -->
-
-<div *ngIf='sortedData' class='d-block p-2 scroll-container'>
-  <div *ngFor='let planet of sortedData' class='card p-1 m-2 w-25 d-inline-block'>
-    <h5 class="card-title">{{planet.name}}</h5>
+    <span class='card-text'>Created: <b>{{planet.created}}</b></span>
+    <span class='card-text'>Orbital Period: <b>{{planet.orbital_period}}</b></span>
+    <span class='card-text'>Terrain : <b>{{planet.terrain}}</b></span>
     <span class='card-text'>Population: <b>{{planet.population}}</b></span>
   </div>
 </div>

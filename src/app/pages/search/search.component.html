@@ -1,15 +1,23 @@
 <div class='bg-div'>
-  <div class='p-4'>
-    <button (click)='logout()' class="float-right btn btn-light" type="submit">Logout</button>
+  <div class='p-4 d-flex justify-content-between header'>
+    <h4 class='text-secondary'>Welcome to Planet Search</h4>
+    <div (click)='logout()' class="logout">Logout</div>
   </div>
   <br />
-  <div class='main-container d-flex justify-content-center align-items-center pt-5'>
-    <div class='mt-5'>
+  <div class='d-flex justify-content-center pt-5 info-question'>
+      <h3>Which planet do you want to search?</h3>
+  </div>
+  <div class='main-container d-flex justify-content-center align-items-center'>
+    <div>
       <input (ngModelChange)='searchPlanets($event)' [(ngModel)]='planetSearch' type="text"
-        class="form-control form-control-lg search-input" id="searchInput" placeholder="Search Planets" />
+        class="form-control form-control-lg search-input" id="searchInput" placeholder="You can provide your input here" />
     </div>
   </div>
+  <div class="d-flex justify-content-center">
+      <h4 *ngIf='!allPlanets' class='span-link' (click)='searchedPlanets = planets; allPlanets = true'>Show all Planets</h4>
+      <h4 *ngIf='allPlanets' class='span-link' (click)='searchedPlanets = []; allPlanets = false'>Hide all Planets</h4>
+  </div>
   <div class='p-4'>
-    <app-srollable-container [data]='planets'></app-srollable-container>
+    <app-srollable-container [data]='searchedPlanets'></app-srollable-container>
   </div>
 </div>

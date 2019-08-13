@@ -8,18 +8,28 @@ import { Planet } from '../../models/planet.model';
 })
 export class SrollableContainerComponent implements OnChanges {
   @Input() data: any[];
-  public sortedData: Planet[];
+  public sortedData: Planet[] = [];
   constructor() { }
 
   ngOnChanges() {
+    this.dataToDisplay();
+  }
+
+  dataToDisplay() {
     if (this.data) {
-      let sortedData = this.sortData();
+      let sortedData = this.requiredData();
+      let max = +sortedData[sortedData.length - 1].population;
+      let barLength = 300;
+      let fraction = barLength / max;
+      sortedData.forEach((element) => {
+        element.progress = fraction * element.population;
+      });
       this.sortedData = sortedData;
       console.log(this.sortedData);
     }
   }
 
-  sortData() {
+  requiredData() {
     let data = this.data.sort(function (a, b) {
       if (isNaN(parseInt(a.population))) {
         a.population = 0;

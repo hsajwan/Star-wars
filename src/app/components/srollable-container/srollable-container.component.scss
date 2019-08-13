@@ -1,7 +1,23 @@
 .scroll-container {
     min-width: 320px;
-    max-height: 450px;
+    max-height: 300px;
     overflow-y: scroll
+}
+
+.sorted-card {
+  border-radius: 4px;
+  background: #00000094;
+  color: cadetblue;
+  min-width: 320px;
+}
+
+.bar{
+  width: 300px;
+  background: #ffcaca36
+}
+
+.progress {
+  background: #084f51;
 }
 
 /* width */
@@ -11,15 +27,15 @@
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #00000094; 
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: cadetblue; 
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #084f51;
   }

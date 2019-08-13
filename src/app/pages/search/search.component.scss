@@ -7,3 +7,33 @@
 .search-input {
     min-width: 320px;
 }
+
+.header {
+    background-color: #00000073;
+}
+
+.logout {
+    cursor: pointer;
+    color: indianred;
+    font-weight: 700;
+    padding: 5px;
+    border-radius: 4px;
+    &:hover {
+        background: indianred;
+        color: white
+    }
+}
+
+.info-question {
+    color: white;
+    opacity: 0.5;
+}
+
+.span-link {
+    color: grey;
+    &:hover{
+        cursor: pointer;
+        color: blanchedalmond;
+        text-decoration: underline;
+    }
+}
